@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estúdio Aconchego — sites, design e arte para jogos</title>
+  <meta name="description" content="Uma equipe freelancer para programação, design de sites, modelagem 3D e arte 2D para jogos. Escolha o dia, o pacote de horas e pronto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="alternate" hreflang="pt-BR" href="/">
+  <link rel="alternate" hreflang="en-US" href="/en/">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="brand" href="#topo"><span aria-hidden="true">☕</span> Estúdio Aconchego</a>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a class="lang" href="/en/" lang="en" hreflang="en-US" title="English version">🇺🇸 EN</a>
+      <a class="btn btn-small" href="#pedido">Fazer pedido</a>
+    </nav>
+  </header>
+
+  <main id="topo">
+
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Equipe freelancer · sem pressa, com capricho</p>
+        <h1>Seu projeto feito com calma, do jeitinho que você imaginou.</h1>
+        <p class="lead">
+          Programação, design de sites, modelagem 3D e arte 2D para jogos.
+          Você escolhe o dia de início e um pacote de horas — a gente cuida do resto.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#pedido">Montar meu pedido</a>
+          <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 300" role="img">
+          <circle cx="160" cy="160" r="128" fill="#f1d9a7"/>
+          <circle cx="160" cy="160" r="100" fill="#fffaf3"/>
+          <g class="steam" fill="none" stroke="#c8744f" stroke-width="6" stroke-linecap="round">
+            <path d="M130 96c-10-14 10-22 0-38"/>
+            <path d="M160 92c-10-14 10-22 0-38"/>
+            <path d="M190 96c-10-14 10-22 0-38"/>
+          </g>
+          <path d="M96 120h128v64a52 52 0 0 1-52 52h-24a52 52 0 0 1-52-52z" fill="#c8744f"/>
+          <path d="M224 136h14a26 26 0 0 1 0 52h-14" fill="none" stroke="#c8744f" stroke-width="12" stroke-linecap="round"/>
+          <path d="M96 120h128v14H96z" fill="#a85d3c"/>
+          <path d="M160 196c-14-10-22-18-22-27a11 11 0 0 1 22-5 11 11 0 0 1 22 5c0 9-8 17-22 27z" fill="#fffaf3"/>
+          <ellipse cx="160" cy="250" rx="84" ry="10" fill="#e6d3bd"/>
+        </svg>
+      </div>
+    </section>
+
+    <section id="servicos" class="section">
+      <h2>O que a gente faz</h2>
+      <p class="section-lead">Quatro especialidades, os mesmos pacotes de horas para todas, em dólar (USD). Simples assim.</p>
+      <div id="service-cards" class="cards">
+        <p class="loading">Carregando serviços…</p>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="section section-soft">
+      <h2>Como funciona</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <h3>Escolha o serviço</h3>
+          <p>Diga o que precisa, quando quer começar e quantas horas quer contratar.</p>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <h3>Pague com segurança</h3>
+          <p>O pagamento é feito pela Stripe. Nenhum dado de cartão passa por nós.</p>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <h3>A equipe recebe na hora</h3>
+          <p>Seu pedido chega direto para nós e entramos em contato para começar.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="pedido" class="section">
+      <h2>Monte seu pedido</h2>
+      <p class="section-lead">Leva um minutinho. Pegue um café e vamos lá.</p>
+
+      <form id="order-form" class="order" novalidate>
+        <div class="order-fields">
+          <label class="field">
+            <span>Serviço</span>
+            <select id="serviceId" name="serviceId" required></select>
+          </label>
+
+          <label class="field">
+            <span>Data de início</span>
+            <input type="date" id="startDate" name="startDate" required>
+          </label>
+
+          <fieldset class="field packages">
+            <legend>Pacote de horas</legend>
+            <div id="packages" class="package-grid"></div>
+          </fieldset>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Seu nome</span>
+              <input type="text" id="customerName" name="customerName" autocomplete="name" maxlength="100" required>
+            </label>
+            <label class="field">
+              <span>Seu e-mail</span>
+              <input type="email" id="customerEmail" name="customerEmail" autocomplete="email" maxlength="200" required>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Conte o que você precisa</span>
+            <textarea id="brief" name="brief" rows="5" maxlength="450" placeholder="Ex.: uma landing page para minha cafeteria, com cardápio e formulário de contato…" required></textarea>
+            <small id="brief-count" class="hint">0 / 450</small>
+          </label>
+        </div>
+
+        <aside class="summary" aria-live="polite">
+          <h3>Resumo</h3>
+          <dl>
+            <div><dt>Serviço</dt><dd id="sum-service">—</dd></div>
+            <div><dt>Início</dt><dd id="sum-date">—</dd></div>
+            <div><dt>Pacote</dt><dd id="sum-package">—</dd></div>
+          </dl>
+          <p class="total"><span>Total</span><strong id="sum-total">—</strong></p>
+          <button type="submit" class="btn btn-block" id="submit-btn">Ir para o pagamento</button>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+          <p class="hint center">🔒 Pagamento seguro pela Stripe</p>
+        </aside>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Feito com carinho e café · Estúdio Aconchego</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
